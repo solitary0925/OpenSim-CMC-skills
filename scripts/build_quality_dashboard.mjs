@@ -72,10 +72,10 @@ for (const mode of ['Fast', 'Slow']) {
   sheet.getRange('A7').format.horizontalAlignment = 'center';
   for (const [row, value] of [
     [1, `单腿 CMC 质量总表 · ${mode}`],
-    [2, `${new Set(rows.map((row) => row.trial.toLowerCase())).size} 条试次 · ${rows.length} 个支撑段 · 配置排除 ${batch.rows.length - rows.length} 段`],
+    [2, `运动学输入 ${batch.kinematics_source ?? '未记录'} · ${new Set(rows.map((row) => row.trial.toLowerCase())).size} 条试次 · ${rows.length} 个支撑段 · 配置排除 ${batch.rows.length - rows.length} 段`],
     [3, '蓝色试次标签表示本表是主选模式。标签中的诊断表示该模式未通过本批验收。'],
     [4, '灰色 N/A 表示模型不适用或该模式无数值。全身残余和平移追踪不适用于规定骨盆的单腿模型。'],
-    [5, '旋转误差和储备力矩各列均取同窗内六个坐标中最大的对应 MAX 或 RMS。颜色采用参考图的绝对阈值，批次验收另含相对储备和联合改善条件。'],
+    [5, '旋转误差和储备力矩各列均取该次 CMC 评估窗内六个坐标中最大的对应 MAX 或 RMS。颜色采用参考图阈值，批次另有验收条件。'],
   ]) {
     sheet.mergeCells(`A${row}:K${row}`);
     sheet.getRange(`A${row}`).values = [[value]];

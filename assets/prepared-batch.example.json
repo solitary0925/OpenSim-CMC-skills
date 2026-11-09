@@ -5,6 +5,8 @@
   "workers": 1,
   "timeout_s": 900,
   "outer_search": true,
+  "kinematics_source": null,
+  "filtering_decision": {"status": "pending", "choice": null, "signals": [], "upstream_filtering": {}, "confirmation_source": ""},
   "muscle_strength_profile": "prepared_so",
   "exclude_trial_prefixes": [],
   "cases": [
@@ -13,7 +15,7 @@
       "stance": "stance_01_R",
       "side": "R",
       "plate": 2,
-      "so_folder": "/path/to/single_leg_SO/selected_attempt",
+      "prepared_folder": "/path/to/prepared_single_leg_inputs",
       "contact_audit": "/path/to/contact_audits/walk_01.json",
       "full_wrenches": "/path/to/calibrated/ungated/full_wrenches.mot",
       "id_reference": "/path/to/ID_single_leg/net_moments.sto"

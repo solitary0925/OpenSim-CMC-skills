@@ -98,8 +98,8 @@ def configure(path, mode, dt, gains, scale, record):
 
 def grade(result, side):
     suffix = '_'+side.lower()
-    tracking = {r['coordinate']:r for r in result['tracking']}
-    reserves = {r['coordinate']:r for r in result['reserves']}
+    tracking = {r['coordinate']:r for r in result['selection_tracking']}
+    reserves = {r['coordinate']:r for r in result['selection_reserves']}
     ankle = tracking['ankle_angle'+suffix]['RMS']
     joints = [reserves[joint+suffix] for joint in JOINTS]
     quantified = [r['CMC_percent_ID']/10 for r in joints if r['CMC_percent_ID'] is not None]
@@ -144,8 +144,7 @@ def run_mode(job, seed, folder, cli, timeout, mode):
         row['joint_improvement'] = reference is not None and row['vector'][0]<reference[0]-1e-8 and all(
             a<=b+1e-8 for a,b in zip(row['vector'][1:],reference[1:]))
         if row is not baseline and reference is not None:
-            assert row['common_frames']==baseline['common_frames'] and row['common_samples']==baseline['common_samples']
-            assert row['common_SO_missing_frames']==baseline['common_SO_missing_frames']
+            assert row['selection_times']==baseline['selection_times']
     qualified = [r for r in usable if r['gate'] and (r['joint_improvement'] or reference is None)]
     improved = [r for r in usable if r['joint_improvement']]
     pool = qualified or improved or usable
@@ -201,8 +200,9 @@ def write_batch_metrics(out, rows):
                             is_baseline=a['name']=='baseline', mode_selected=chosen, primary=primary,
                             primary_quality=case['quality'] if primary else '', output=a['output'])
                 attempts.append(dict(**tags, status=a['status'], reason=a.get('reason',''), gate=a.get('gate'),
-                                     joint_improvement=a.get('joint_improvement'), frames=a.get('common_frames'),
-                                     samples=a.get('common_samples'), score=a.get('score'),
+                                     joint_improvement=a.get('joint_improvement'), frames=a.get('evaluation_frames'),
+                                     samples=a.get('evaluation_samples'), score=a.get('score'),
+                                     id_reference_status=a.get('id_reference_status'),
                                      tracking_flags=[x['coordinate'] for x in a.get('tracking_flags',[])],
                                      reserve_flags=[x['coordinate'] for x in a.get('reserve_flags',[])]))
                 if a['status']!='completed':
