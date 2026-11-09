@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenSim 单腿 CMC"
+  short_description: "用 IK 规定骨盆，只加载目标脚力台，运行单腿 CMC 并与单腿 SO 同窗对照"
+  default_prompt: "使用 $opensim-vicon-cmc 核查目标脚接触，运行规定骨盆运动的单腿 CMC，并与单腿 SO 同窗对比。"

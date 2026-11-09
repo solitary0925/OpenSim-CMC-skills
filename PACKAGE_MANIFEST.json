@@ -1,0 +1,16 @@
+{
+  "name": "opensim-vicon-cmc",
+  "version": "0.3.0",
+  "files": {
+    "agents/openai.yaml": "90ce03523b220cd28ca873a1c162e4396957bc0e3143bff565ff1fbc34bdbf20",
+    "assets/prepared-batch.example.json": "62c2a0e229ca2b64240f90db66d9cbffd0d49876af2fe64e9860e25f6cce8b52",
+    "references/execution.md": "9289714cd0b2b77cf134e201f98b9991da7e807c8d5e09217f480c7784aed4cd",
+    "references/outer-search.md": "0fc1d182affb9ca25c1e768222348906a2cbef1fd6328f9e3fd0a3d930897289",
+    "scripts/build_quality_dashboard.mjs": "4392cf290c9749a297ab5c551d8c5d1c7bb2113dc8a31d02be0c0d5e13d462fd",
+    "scripts/export_quality_dashboard.py": "910a8359eeb77ce2a10fb98ec1d78098f793855eadb881d008a8bd3e49dd6691",
+    "scripts/outer_search.py": "3f8523f422b6bf32f4bfc0a4145336648fd70d5d3ea286e55ff0f5c4b48d41d3",
+    "scripts/run_single_leg_batch.py": "b86c25896e135f757b0ce424cb3204e539511225399db28cdda3216b5f7ded25",
+    "scripts/summarize_batch.py": "f9a0301041ecdeba001b2bc1dc4ef9cd0595f16ccfa79ec9e63760b76cafa8ec",
+    "SKILL.md": "320711f577b2be151295006fa9d7a516cb8b4c353fa899c022aaa962d0025bb2"
+  }
+}

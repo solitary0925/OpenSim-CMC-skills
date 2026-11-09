@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.log
+*.xlsx
+*.xlsx.inspect.ndjson
+new_cmc_results/

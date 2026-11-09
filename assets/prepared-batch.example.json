@@ -1,0 +1,22 @@
+{
+  "output": "./new_cmc_results",
+  "opensim_cmd": "/path/to/OpenSim/bin/opensim-cmd",
+  "gait2392_templates": "/path/to/OpenSim/Resources/Models/Gait2392_Simbody",
+  "workers": 1,
+  "timeout_s": 900,
+  "outer_search": true,
+  "muscle_strength_profile": "prepared_so",
+  "exclude_trial_prefixes": [],
+  "cases": [
+    {
+      "trial": "walk_01",
+      "stance": "stance_01_R",
+      "side": "R",
+      "plate": 2,
+      "so_folder": "/path/to/single_leg_SO/selected_attempt",
+      "contact_audit": "/path/to/contact_audits/walk_01.json",
+      "full_wrenches": "/path/to/calibrated/ungated/full_wrenches.mot",
+      "id_reference": "/path/to/ID_single_leg/net_moments.sto"
+    }
+  ]
+}
